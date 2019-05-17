@@ -54,7 +54,7 @@ sub Boss() {
 	Anm_select(3);
 	Anm_setMain(0, 0);
 	setHurtbox(56.0f, 56.0f);
-    setHitbox(50.0f, 50.0f);
+	setHitbox(50.0f, 50.0f);
 	call("BossNon1");
 	waitForever();
 	return();
@@ -121,4 +121,5 @@ sub BossNon1_at2() {
 	Et_transformPush($et, 0, [EX_ACCEL], 120, [NEG], 0.06f, [PI1_2]);
 	Et_shoot($et);
 	delete();
-}```
+} 
+```
