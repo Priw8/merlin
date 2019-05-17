@@ -87,7 +87,7 @@ global[COLOR_NEG] = 0; /* for single color bullets if someone REALLY likes const
 /* bullet transformations */
 
 global[EX_DIST] = 1;
-global[EX_FOG] = 2;
+global[EX_ANIM] = 2;
 global[EX_ACCEL] = 4;
 global[EX_ANGLE_ACCEL] = 8;
 global[EX_ANGLE] = 16;

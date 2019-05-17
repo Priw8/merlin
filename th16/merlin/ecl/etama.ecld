@@ -27,16 +27,16 @@ sub Et_exDist(et channel) {
 }
 
 
-/* I don't know what this does, Chinese wiki says something about "setting the fog" */
-sub Et_exFogSet(et channel slot a) {
+/* slightly changes the bullet spawn animation based on "a" */
+sub Et_exAnimSet(et channel slot a) {
 	var;
-	Et_transformSet($et, $slot, $channel, [EX_FOG], $a, [NEG], [NEGF], [NEGF]);
+	Et_transformSet($et, $slot, $channel, [EX_ANIM], $a, [NEG], [NEGF], [NEGF]);
 	return();
 }
 
-sub Et_exFog(et channel a) {
+sub Et_exAnim(et channel a) {
 	var;
-	Et_transformPush($et, $channel, [EX_FOG], $a, [NEG], [NEGF], [NEGF]);
+	Et_transformPush($et, $channel, [EX_ANIM], $a, [NEG], [NEGF], [NEGF]);
 	return();
 }
 
