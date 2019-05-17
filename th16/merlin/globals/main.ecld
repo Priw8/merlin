@@ -1,0 +1,8 @@
+#include "merlin/globals/enm.ecld"
+#include "merlin/globals/effect.ecld"
+#include "merlin/globals/etama.ecld"
+#include "merlin/globals/math.ecld"
+#include "merlin/globals/item.ecld"
+#include "merlin/globals/flag.ecld"
+#include "merlin/globals/mode.ecld"
+#include "merlin/globals/sfx.ecld"

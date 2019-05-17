@@ -1,0 +1,3 @@
+#map "merlin/th16.eclmap"
+#include "merlin/globals/main.ecld"
+#include "merlin/ecl/main.ecld"
