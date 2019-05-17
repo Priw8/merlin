@@ -89,7 +89,7 @@ sub BossNon1_at() {
 			Et_setCount($et, 52, 2);
 			Et_setSprite($et, [ET_BUTTERFLY], [COLOR8_GREEN]);
 			Et_exBounceSet($et, 0, 1, 1, [BOUNCE_U], [NEGF]);
-			Et_exAngleSet($et, 0, 2, 0, 1, 5, 0.12f, [NEGF]);
+			Et_exAngleSet($et, 0, 2, 0, 1, [ANGLE_RANDOM], 0.12f, [NEGF]);
 		} else if ($n == 1) {
 			Et_setSprite($et, [ET_BUTTERFLY], [COLOR8_BLUE]);
 			Et_exBounceSet($et, 0, 1, 1, [BOUNCE_L], [NEGF]);
