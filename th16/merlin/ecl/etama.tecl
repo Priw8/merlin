@@ -5,6 +5,22 @@ sub etOnAuto(int et, int del, int n) {
 	}
 }
 
+sub etSet(
+    /* the arg order can be remembered as ATCAS (aim, type, cnt, ang, spd) */
+    int et, int aim, 
+    int type, int type2, 
+    int cnt, int cnt2, 
+    float ang, float ang2,
+    float spd, float spd2
+) {
+    etNew(et);
+    etAim(et, aim);
+    etSprite(et, type, type2);
+    etCount(et, cnt, cnt2);
+    etAngle(et, ang, ang2);
+    etSpeed(et, spd, spd2);
+}
+
 
 /* bullets travel a small distance forward at a fast speed after being shot, then return to normal speed */
 sub etExDistSet(int et, int channel, int slot) {
