@@ -1,0 +1,72 @@
+/* waits forever */
+sub stop() {
+LOOP:
+	wait(1000);
+	goto LOOP @ 0;
+}
+
+
+/* to be called before every spellcard declaration */
+sub setupCard() {
+	if (TIMEOUT == 0) {
+		etCancel(1640.0f); /* ZUN does 640.0f, but we all know what happened with Sinkable Vortex in UFO... */
+	} else {
+		etClear(1640.0f);
+	}
+    @BossItemCard();
+    timerReset();
+    unknown21();
+    enmKillAll();
+    spellEnd();
+    funcSet(0);
+    reset();
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    MISS_COUNT = 0;
+    BOMB_COUNT = 0;
+    CAPTURE = 1;
+}
+
+/* to be called before every nonspelll */
+sub setupNon() {
+	setInvuln(120);
+    if (TIMEOUT == 0) {
+		etCancel(1640.0f);
+	} else {
+		etClear(1640.0f);
+	}
+    moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
+    timerReset();
+    unknown21();
+    enmKillAll();
+    spellEnd();
+    funcSet(0);
+    reset();
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    MISS_COUNT = 0;
+    BOMB_COUNT = 0;
+    CAPTURE = 1;
+}
+
+/* drops point and power items */
+sub dropPointPower(int point, int power) {
+	dropClear();
+	dropMain(0);
+	dropExtra([ITEM_POINT], point);
+	dropExtra([ITEM_POWER], power);
+	dropArea(64.0f, 64.0f);
+	dropItems();
+}
+
+/* drops point items, power items and an additational item defined by ex*/
+sub dropPointPowerEx(int point, int power, int ex) {
+	dropClear();
+	dropMain(ex);
+	dropExtra([ITEM_POINT], point);
+	dropExtra([ITEM_POWER], power);
+	dropArea(64.0f, 64.0f);
+	dropItems();
+}

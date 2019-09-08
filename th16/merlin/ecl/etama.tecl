@@ -1,0 +1,345 @@
+sub etOnAuto(int et, int del, int n) {
+	while(n--) {
+		etOn(et);
+		wait(del);
+	}
+}
+
+
+/* bullets travel a small distance forward at a fast speed after being shot, then return to normal speed */
+sub etExDistSet(int et, int channel, int slot) {
+	etExSet(et, slot, channel, [EX_DIST], [NEG], [NEG], [NEGF], [NEGF]);
+}
+
+sub etExDist(int et, int channel) {
+	etEx(et, channel, [EX_DIST], [NEG], [NEG], [NEGF], [NEGF]);
+}
+
+
+/* slightly changes the bullet spawn animation based on "a" */
+sub etExAnimSet(int et, int channel, int slot, int a) {
+	etExSet(et, slot, channel, [EX_ANIM], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExAnim(int et, int channel, int a) {
+	etEx(et, channel, [EX_ANIM], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/* bullet accelerates for "a" frames in direction "s", value of acceleration is "s" */
+sub etExAccelSet(int et, int channel, int slot, int a, float r, float s) {
+	etExSet(et, slot, channel, [EX_ACCEL], a, [NEG], r, s);
+}
+
+sub etExAccel(int et, int channel, int a, float r, float s) {
+	etEx(et, channel, [EX_ACCEL], a, [NEG], r, s);
+}
+
+
+/* for "a" frames, bullet  acceleration is set to "r", and angular velocity is "s". */
+sub etExAngleAccelSet(int et, int channel, int slot, int a, float r, float s) {
+	etExSet(et, slot, channel, [EX_ANGLE_ACCEL], a, [NEG], r, s);
+}
+
+sub etExAngleAccel(int et, int channel, int a, float r, float s) {
+	etEx(et, channel, [EX_ANGLE_ACCEL], a, [NEG], r, s);
+}
+
+/* something that's related to using this with lasers, I haven't investigated that yet */
+sub etExAngleAccelLaserSet(int et, int channel, int slot, int a, int b, float r, float s) {
+	etExSet(et, slot, channel, [EX_ANGLE_ACCEL], a, b, r, s);
+}
+
+sub etExAngleAccelLaser(int et, int channel, int a, int b, float r, float s) {
+	etEx(et, channel, [EX_ANGLE_ACCEL], a, b, r, s);
+}
+
+
+/* in "a" frames the bullets will slow down to, and then perform transformation based on "c". This will be repeated "b" times. For the exact function of "c", refer to globals/etama.ecld */
+sub etExAngleSet(int et, int channel, int slot, int a, int b, int c, float r, float s) {
+	etExSet2(et, slot, channel, [EX_ANGLE], a, b, c, [NEG], r, s, [NEGF], [NEGF]);
+}
+
+sub etExAngle(int et, int channel, int a, int b, int c, float r, float s) {
+	etEx2(et, channel, [EX_ANGLE], a, b, c, [NEG], r, s, [NEGF], [NEGF]);
+}
+
+
+/* make bullets able to bounce on the sides of the screen. "a" is the amount of bounces, "b" specifies the walls on which the bullet can bounce (use constants from globals/etama.ecld), "r" is speed after bouncing (cen be [NEGF] to retain original speed) */
+/* it's also worth noting that the the transformations will stop until the bullet bounced the allowed amount of times, so it can be used to detect when it hits the side of the screen (Okine's first st6 spellcard) */
+sub etExBounceSet(int et, int channel, int slot, int a, int b, float r) {
+	etExSet(et, slot, channel, [EX_BOUNCE], a, b, r, [NEGF]);
+}
+
+sub etExBounce(int et, int channel, int a, int b, float r) {
+	etEx(et, channel, [EX_BOUNCE], a, b, r, [NEGF]);
+}
+
+/* this one allows defining custom wall locations, "s" is the distance of the bounce surface from the top/bottom of the screen and "m" is from left/right sides */
+sub etExBounceCustomSet(int et, int channel, int slot, int a, int b, float r, float s, float m) {
+	etExSet2(et, slot, channel, [EX_BOUNCE], a, b, [NEG], [NEG], r, s, m, [NEGF]);
+}
+
+sub etExBounceCustom(int et, int channel, int a, int b, float r, float s, float m) {
+	etEx2(et, channel, [EX_BOUNCE], a, b, [NEG], [NEG], r, s, m, [NEGF]);
+}
+
+
+
+/* makes bullet invulnerable to bombs and such for "a" frames. Does not actually wait for the effect to finish before moving on to the next transform */
+sub etExInvulnSet(int et, int channel, int slot, int a) {
+	etExSet(et, slot, channel, [EX_INVULN], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExInvuln(int et, int channel, int a) {
+	etEx(et, channel, [EX_INVULN], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/*  I can't get this one to work, supposedly it allows the bullet to leave the screen for "a" frames without getting removed, and role of "b" is unknown */
+sub etExOffscreenSet(int et, int channel, int slot, int a, int b) {
+	etExSet(et, slot, channel, [EX_OFFSCREEN], a, b, [NEGF], [NEGF]);
+}
+
+sub etExOffscreen(int et, int channel, int a, int b) { 
+	etEx(et, channel, [EX_OFFSCREEN], a, b, [NEGF], [NEGF]);
+}
+
+
+/* change bullet sprite, basically Et_setSprite(et, a, b) */
+sub etExSpriteSet(int et, int channel, int slot, int a, int b) {
+	etExSet(et, slot, channel, [EX_SETSPRITE], a, b, [NEGF], [NEGF]);
+}
+
+sub etExSprite(int et, int channel, int a, int b) {
+	etEx(et, channel, [EX_SETSPRITE], a, b, [NEGF], [NEGF]);
+}
+
+
+/* delete bullet, there are 2 graphical effects that can play when deleting the bullet, the one that's used is determined by "a" (either 0 or 1) */
+sub etExDeleteSet(int et, int channel, int slot, int a) {
+	etExSet(et, slot, channel, [EX_DELETE], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExDelete(int et, int channel, int a) {
+	etEx(et, channel, [EX_DELETE], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/* the bullet plays a sound effect, like playSound(a) */
+sub etExSoundSet(int et, int channel, int slot, int a) {
+	etExSet(et, slot, channel, [EX_PLAYSOUND], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExSound(int et, int channel, int a) {
+	etEx(et, channel, [EX_PLAYSOUND], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/* same concept as bouncing, except it wraps around to the other side of the screen instead (Seija's midboss card in DDC) */
+sub etExWrapSet(int et, int channel, int slot, int a, int b, float r) {
+	etExSet(et, slot, channel, [EX_WRAP], a, b, r, [NEGF]);
+}
+
+sub etExWrap(int et, int channel, int a, int b, float r) {
+	etEx(et, channel, [EX_WRAP], a, b, r, [NEGF]);
+}
+
+
+/* shoots a bullet
+(- is used as a filler) 
+Et_aimMode(-, a);
+Et_setCount(-, c, d);
+Et_setAngle(-, r, s);
+Et_setSpeed(-, m, n);
+the spawned bullet will use the same transform list as this one, but will start from index = b
+this also requires the use of the next ins
+*/
+sub etExShootSet(int et, int channel, int slot, int a, int b, int c, int d, float r, float s, float m, float n) {
+	etExSet2(et, slot, channel, [EX_SHOOT], a, b, c, d, r, s, m, n);
+}
+
+sub etExShoot(int et, int channel, int a, int b, int c, int d, float r, float s, float m, float n) {
+	etEx2(et, channel, [EX_SHOOT], a, b, c, d, r, s, m, n);
+}
+
+
+/* defines properties of the bullet shot by the previous ins
+Et_setSprite(-, a, b);
+c determines whether the original bullets is deleted or not, 1 means yes, 0 means no
+if c is 1, d is the bullet deletion effect (like exDelete)
+
+THIS HAS TO BE CALLED AFTER EXSHOOT, NOT BEFORE IT.
+*/
+sub etExDefineShootSet(int et, int channel, int slot, int a, int b, int c, int d) {
+	etExSet2(et, slot, channel, [EX_DEFINESHOOT], a, b, c, d, [NEGF], [NEGF], [NEGF], [NEGF]);
+}
+
+sub etExDefineShoot(int et, int channel, int slot, int a, int b, int c, int d) {
+	etEx2(et, channel, [EX_DEFINESHOOT], a, b, c, d, [NEGF], [NEGF], [NEGF], [NEGF]);
+}
+
+/* a version to be used with laser-shooting transformation, needs investigation */
+sub etExDefineLaserSet(int et, int channel, int slot, int a, int b, int c, int d, float r, float s, float m, float n) {
+	etExSet2(et, slot, channel, [EX_DEFINESHOOT], a, b, c, d, r, s, m, n);
+}
+
+sub etExDefineLaser(int et, int channel, int a, int b, int c, int d, float r, float s, float m, float n) {
+	etEx2(et, channel, [EX_DEFINESHOOT], a, b, c, d, r, s, m, n);
+}
+
+
+/* this works differently in every game lmao (generally used to make bullets react to the player, hence the name)
+refer to snowman (HSiFS), graze inferno (LoLK), wall of issun (DDC), possibly Miko's final in TD
+ */
+sub etExReactSet(int et, int channel, int slot, int a) {
+	etExSet(et, slot, channel, [EX_REACT], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExReact(int et, int channel, int a) {
+	etEx(et, channel, [EX_REACT], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/* immidiately jump to transformation number "a", "b" is used to control the number of loops (th16+ only?) */
+sub etExJumpSet(int et, int channel, int slot, int a, int b) {
+	etExSet(et, slot, channel, [EX_GOTO], a, b, [NEGF], [NEGF]);
+}
+
+sub etExJump(int et, int channel, int a, int b) {
+	etEx(et, channel, [EX_GOTO], a, b, [NEGF], [NEGF]);
+}
+
+
+/* in "a" frames using mode "b", move the bullet to absolute coordinates (r, s). Mode is the same as for functions such as Move_posTime */
+sub etExMoveSet(int et, int channel, int slot, int a, int b, float r, float s) {
+	etExSet(et, slot, channel, [EX_MOVE], a, b, r, s);
+}
+
+sub etExMove(int et, int channel, int a, int b, float r, float s) {
+	etEx(et, channel, [EX_MOVE], a, b, r, s);
+}
+
+
+/* immidiately change bullet angle to "r" and bullet speed to "s" */
+sub etExVelSet(int et, int channel, int slot, float r, float s) {
+	etExSet(et, slot, channel, [EX_VEL], [NEG], [NEG], r, s);
+}
+
+sub etExVel(int et, int channel, float r, float s) {
+	etEx(et, channel, [EX_VEL], [NEG], [NEG], r, s);
+}
+
+
+/* adds velocity to bullet, angle=r speed=s
+this also affects the flow of the transformation list, which is determined by "a", I'm not sure how. Making "a" non-positive seems to cause infinite transformation loop and freeze the game */
+sub etExVelAddSet(int et, int channel, int slot, int a, float r, float s) { 
+	etExSet(et, slot, channel, [EX_VELADD], a, [NEG], r, s);
+}
+
+sub etExVelAdd(int et, int channel, int a, float r, float s) {
+	etEx(et, channel, [EX_VELADD], a, [NEG], r, s);
+}
+
+
+/* sets bullet brightness effect, a=0 normal, a=1 bright, a=2 dark (th16+ only?) */
+sub etExBrightSet(int et, int channel, int slot, int a) { 
+	etExSet(et, slot, channel, [EX_BRIGHT], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExBright(int et, int channel, int a) {
+	etEx(et, channel, [EX_BRIGHT], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/* in "a" frames, change the bullet angle to "r" and bullet speed to "s" minus original speed (regardless of initial angle) */
+/* I swapped "s" and "r" here to match the order of angle, speed arguments of other instructions */
+sub etExVelTimeSet(int et, int channel, int slot, int a, float s, float r) { 
+	etExSet(et, slot, channel, [EX_VELTIME], a, [NEG], r, s);
+}
+
+sub etExVelTime(int et, int channel, int a, float s, float r) {
+	etEx(et, channel, [EX_VELTIME], a, [NEG], r, s);
+}
+
+
+/* in "a" frames using mode "b", the bullet changes size from "r" to "s". */
+sub etExSizeSet(int et, int channel, int slot, int a, int b, float r, float s) { 
+	etExSet(et, slot, channel, [EX_SIZE], a, b, r, s);
+}
+
+sub etExSize(int et, int channel, int a, int b, float r, float s) {
+	etEx(et, channel, [EX_SIZE], a, b, r, s);
+}
+
+
+/* save current angle from the bullet to the player, to be used with EX_ANGLE c=2 (ANGLE_SAVED constant) */
+sub etExSaveAngleSet(int et, int channel, int slot) { 
+	etExSet(et, slot, channel, [EX_SAVEANGLE], [NEG], [NEG], [NEGF], [NEGF]);
+}
+
+sub etExSaveAngle(int et, int channel) {
+	etEx(et, channel, [EX_SAVEANGLE], [NEG], [NEG], [NEGF], [NEGF]);
+}
+
+
+/* execute the sub set by ins_640 (Et_setExSub) earlier, if ins_640 wasn't used the game explodes */
+sub etExSpecialSet(int et, int channel, int slot) { 
+	etExSet(et, slot, channel, [EX_SPECIAL], [NEG], [NEG], [NEGF], [NEGF]);
+}
+
+sub etExSpecial(int et, int channel) {
+	etEx(et, channel, [EX_SPECIAL], [NEG], [NEG], [NEGF], [NEGF]);
+}
+
+
+/* change the layer of the bullet to "a" */
+sub etExLayerSet(int et, int channel, int slot, int a) { 
+	etExSet(et, slot, channel, [EX_LAYER], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExLayer(int et, int channel, int a) {
+	etEx(et, channel, [EX_LAYER], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+/* set the delay before the bullet spawns to "a", for example if a=60, the bullet will appear 1 second after calling ins_601 (Et_shoot) */
+sub etExDelaySet(int et, int channel, int slot, int a) { 
+	etExSet(et, slot, channel, [EX_DELAY], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExDelay(int et, int channel, int a) {
+	etEx(et, channel, [EX_DELAY], a, [NEG], [NEGF], [NEGF]);
+}
+
+
+
+/* shoot a laser, I don't know how this one works yet, requires use of one of the earlier transform types too */
+sub etExLaserSet(int et, int channel, int slot, int a, int b, int c, int d, float r, float s, float m, float n) {
+	etExSet2(et, slot, channel, [EX_LASER], a, b, c, d, r, s, m, n);
+}
+
+sub etExLaser(int et, int channel, int a, int b, int c, int d, float r, float s, float m, float n) {
+	etEx2(et, channel, [EX_LASER], a, b, c, d, r, s, m, n);
+}
+
+
+
+/* set bullet hitbox, 0.0f no hitbox, -1.0f restore original hitbox, please do not use this to make EoSD mentos */
+sub etExHitboxSet(int et, int channel, int slot, float r) { 
+	etExSet(et, slot, channel, [EX_HITBOX], [NEG], [NEG], r, [NEGF]);
+}
+
+sub etExHitbox(int et, int channel, float r) {
+	etEx(et, channel, [EX_HITBOX], [NEG], [NEG], r, [NEGF]);
+}
+
+
+/* wait "a" frames before moving on to the next transform */
+sub etExWaitSet(int et, int channel, int slot, int a) { 
+	etExSet(et, slot, channel, [EX_WAIT], a, [NEG], [NEGF], [NEGF]);
+}
+
+sub etExWait(int et, int channel, int a) {
+	etEx(et, channel, [EX_WAIT], a, [NEG], [NEGF], [NEGF]);
+}
