@@ -1,0 +1,8 @@
+#include "enm.tecl"
+#include "effect.tecl"
+#include "etama.tecl"
+#include "math.tecl"
+#include "item.tecl"
+#include "flag.tecl"
+#include "mode.tecl"
+#include "sfx.tecl"

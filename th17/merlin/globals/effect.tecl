@@ -1,0 +1,140 @@
+/* th17 effect.anm */
+
+global[ANM_EFFECT] = 1; /* file number for Anm_select is always 1 */
+
+global[EFF_EMPTY] = 0;
+global[EFF_LOADING_SWIPES] = 1;
+
+global[EFF_CIRCLE] = 12; /* while this is a subscript of 13, I think it looks well enough on its own */
+
+global[EFF_BORDER_OF_LIFE] = 13;
+
+global[EFF_SPELL_ATTACK] = 20;
+
+global[EFF_PARTICLE_STATIC] = 21;
+global[EFF_PARTICLE_RELEASE] = 22;
+global[EFF_PARTICLE_CHARGE] = 23;
+global[EFF_PARTICLE_RELEASE_SHORT] = 24;
+
+global[EFF_HITBOX] = 26;
+global[EFF_HITBOX_LARGE] = 27;
+
+global[EFF_EXPLODE_LARGE] = 28;
+global[EFF_EXPLODE] = 29;
+global[EFF_EXPLODE_LARGE_ALT] = 38;
+
+global[EFF_EXPLODE_RED] = 40;
+global[EFF_EXPLODE_BLUE] = 44;
+global[EFF_EXPLODE_GREEN] = 48;
+global[EFF_EXPLODE_DARKGREEN] = 52;
+
+global[EFF_EXPLODE_COLORFUL] = 56;
+global[EFF_EXPLODE_RED_GREEN] = 57;
+global[EFF_EXPLODE_RED_DARKGREEN] = 58;
+
+global[EFF_EXPLODE_RED_ALT] = 59;
+global[EFF_EXPLODE_BLUE_ALT] = 60;
+global[EFF_EXPLODE_GREEN_ALT] = 61;
+global[EFF_EXPLODE_DARKGREEN_ALT] = 62;
+
+global[EFF_EXPLODE_1] = 63;
+global[EFF_EXPLODE_3] = 64;
+global[EFF_EXPLODE_2] = 65;
+
+global[EFF_CHARGE_PURPLE] = 71;
+global[EFF_CHARGE_RED] = 73;
+global[EFF_CHARGE_BLUE] = 75;
+global[EFF_CHARGE_CYAN] = 77;
+global[EFF_CHARGE_GREEN] = 79;
+global[EFF_CHARGE_YELLOW] = 81;
+global[EFF_CHARGE_WHITE] = 83;
+
+global[EFF_EXPLODE_PURPLE] = 86;
+global[EFF_EXPLODE_RED] = 88;
+global[EFF_EXPLODE_BLUE] = 90;
+global[EFF_EXPLODE_CYAN] = 92;
+global[EFF_EXPLODE_GREEN] = 94;
+global[EFF_EXPLODE_YELLOW] = 96;
+global[EFF_EXPLODE_WHITE] = 98;
+
+global[EFF_PARTICLE_3D_LIGHT] = 102;
+global[EFF_PARTICLE_3D_RED1] = 103;
+global[EFF_PARTICLE_3D_RED2] = 104;
+
+global[EFF_MAGIC_CIRCLE] = 105;
+global[EFF_MAGIC_CIRCLE_SHRINKING] = 106;
+
+/* 113, 117, 121, 125, 129, 133, 137, 141 should be doing something, but I think their layer is too low to actually show up in-game */
+
+global[EFF_PARTICLE_3D_SMALLLEAF] = 139;
+
+global[EFF_PARTICLE_STREAM] = 149;
+
+
+global[EFF_CHARGE_BLACK_RIGHT] = 152;
+global[EFF_CHARGE_BLACK_LEFT] = 153;
+
+global[EFF_CHARGE_RED_RIGHT] = 154;
+global[EFF_CHARGE_RED_LEFT] = 155;
+
+global[EFF_CHARGE_GREEN_RIGHT] = 156;
+global[EFF_CHARGE_GREEN_LEFT] = 157;
+
+global[EFF_CHARGE_BLUE_RIGHT] = 158;
+global[EFF_CHARGE_BLUE_LEFT] = 159;
+
+global[EFF_CHARGE_YELLOW_RIGHT] = 160;
+global[EFF_CHARGE_YELLOW_LEFT] = 161;
+
+global[EFF_CHARGE_PURPLE_RIGHT] = 162;
+global[EFF_CHARGE_PURPLE_LEFT] = 163;
+
+global[EFF_CHARGE_CYAN_RIGHT] = 164;
+global[EFF_CHARGE_CYAN_LEFT] = 165;
+
+
+global[EFF_CHARGE_BLACK2_RIGHT] = 166;
+global[EFF_CHARGE_BLACK2_LEFT] = 167;
+
+global[EFF_CHARGE_RED2_RIGHT] = 168;
+global[EFF_CHARGE_RED2_LEFT] = 169;
+
+global[EFF_CHARGE_GREEN2_RIGHT] = 170;
+global[EFF_CHARGE_GREEN2_LEFT] = 171;
+
+global[EFF_CHARGE_BLUE2_RIGHT] = 172;
+global[EFF_CHARGE_BLUE2_LEFT] = 173;
+
+global[EFF_CHARGE_YELLOW2_RIGHT] = 174;
+global[EFF_CHARGE_YELLOW2_LEFT] = 175;
+
+global[EFF_CHARGE_PURPLE2_RIGHT] = 176;
+global[EFF_CHARGE_PURPLE2_LEFT] = 177;
+
+global[EFF_CHARGE_CYAN2_RIGHT] = 178;
+global[EFF_CHARGE_CYAN2_LEFT] = 179;
+
+
+global[EFF_CHARGE_BLACK3_RIGHT] = 180;
+global[EFF_CHARGE_BLACK3_LEFT] = 181;
+
+global[EFF_CHARGE_RED3_RIGHT] = 182;
+global[EFF_CHARGE_RED3_LEFT] = 183;
+
+global[EFF_CHARGE_GREEN3_RIGHT] = 184;
+global[EFF_CHARGE_GREEN3_LEFT] = 185;
+
+global[EFF_CHARGE_BLUE3_RIGHT] = 186;
+global[EFF_CHARGE_BLUE3_LEFT] = 187;
+
+global[EFF_CHARGE_YELLOW3_RIGHT] = 188;
+global[EFF_CHARGE_YELLOW3_LEFT] = 189;
+
+global[EFF_CHARGE_PURPLE3_RIGHT] = 190;
+global[EFF_CHARGE_PURPLE3_LEFT] = 191;
+
+global[EFF_CHARGE_CYAN3_RIGHT] = 192;
+global[EFF_CHARGE_CYAN3_LEFT] = 193;
+
+
+global[EFF_LOADING] = 194;

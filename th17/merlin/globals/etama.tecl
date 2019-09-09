@@ -1,0 +1,181 @@
+/* th17 bullet types for etSprite */
+
+global[ET_PELLET] = 0;
+global[ET_PELLET2] = 1;
+global[ET_POPCORN] = 2;
+global[ET_PELLET3] = 3;
+global[ET_BALL] = 4;
+global[ET_BALL2] = 5;
+global[ET_OUTLINE] = 6;
+global[ET_OUTLINE2] = 7;
+global[ET_RICE] = 8;
+global[ET_KUNAI] = 9;
+global[ET_SHARD] = 10;
+global[ET_AMULET] = 11;
+global[ET_ARROWHEAD] = 12;
+global[ET_BULLET] = 13;
+global[ET_LASERHEAD] = 14;
+global[ET_STAR] = 16;
+global[ET_COIN] = 17;
+global[ET_MENTOS] = 18;
+global[ET_MENTOS2] = 19;
+global[ET_JELLYBEAN] = 20;
+global[ET_KNIFE] = 21;
+global[ET_BUTTERFLY] = 22;
+global[ET_BIGSTAR] = 23;
+global[ET_BIGSTAR2] = 24;
+global[ET_FIREBALL_RED] = 25;
+global[ET_FIREBALL_PURPLE] = 26;
+global[ET_FIREBALL_BLUE] = 27;
+global[ET_FIREBALL_YELLOW] = 28;
+global[ET_HEART] = 29;
+global[ET_PULSE] = 30;
+global[ET_ARROW] = 31;
+global[ET_BUBBLE] = 32;
+global[ET_ORB] = 33;
+global[ET_DROPLET] = 34;
+global[ET_RICE_SPIN] = 35;
+global[ET_SHARD_SPIN] = 36;
+global[ET_STAR2] = 37;
+global[ET_LASER] = 38;
+global[ET_NOTE_RED] = 39;
+global[ET_NOTE_BLUE] = 40;
+global[ET_NOTE_GREEN] = 41;
+global[ET_NOTE_PURPLE] = 42;
+global[ET_REST] = 43;
+
+/* th17 bullet colors for etSprite */
+
+global[COLOR16_BLACK] = 0;
+global[COLOR16_DARKRED] = 1;
+global[COLOR16_RED] = 2;
+global[COLOR16_PURPLE] = 3;
+global[COLOR16_PINK] = 4;
+global[COLOR16_DARKBLUE] = 5;
+global[COLOR16_BLUE] = 6;
+global[COLOR16_DARKCYAN] = 7;
+global[COLOR16_CYAN] = 8;
+global[COLOR16_DARKGREEN] = 9;
+global[COLOR16_GREEN] = 10;
+global[COLOR16_LIME] = 11;
+global[COLOR16_DARKYELLOW] = 12;
+global[COLOR16_YELLOW] = 13;
+global[COLOR16_ORANGE] = 14;
+global[COLOR16_WHITE] = 15;
+global[COLOR16_SPECIAL] = 15; /* Kunais are weird */
+
+global[COLOR_COIN_GOLD] = 0;
+global[COLOR_COIN_SILVER] = 1;
+global[COLOR_COIN_BRONZE] = 2;
+
+global[COLOR8_BLACK] = 0;
+global[COLOR8_RED] = 1;
+global[COLOR8_PINK] = 2;
+global[COLOR8_BLUE] = 3;
+global[COLOR8_CYAN] = 4;
+global[COLOR8_GREEN] = 5;
+global[COLOR8_YELLOW] = 6;
+global[COLOR8_WHITE] = 7;
+
+global[COLOR4_RED] = 0;
+global[COLOR4_BLUE] = 1;
+global[COLOR4_GREEN] = 2;
+global[COLOR4_YELLOW] = 3;
+
+global[COLOR_NEG] = 0; /* for single color bullets if someone REALLY likes constants */
+
+/* bullet transformations */
+
+global[EX_DIST] = 1;
+global[EX_ANIM] = 2;
+global[EX_ACCEL] = 4;
+global[EX_ANGLE_ACCEL] = 8;
+global[EX_ANGLE] = 16;
+/* 32 is not used */
+global[EX_BOUNCE] = 64;
+global[EX_INVULN] = 128;
+global[EX_OFFSCREEN] = 256;
+global[EX_SETSPRITE] = 512;
+global[EX_DELETE] = 1024;
+global[EX_PLAYSOUND] = 2048;
+global[EX_WRAP] = 4096;
+global[EX_SHOOT] = 8192;
+global[EX_DEFINESHOOT] = 16384;
+global[EX_REACT] = 32768;
+global[EX_GOTO] = 65536;
+global[EX_MOVE] = 131072;
+global[EX_VEL] = 262144;
+global[EX_VELADD] = 524288;
+global[EX_BRIGHT] = 1048576;
+global[EX_VELTIME] = 2097152;
+global[EX_SIZE] = 4194304;
+global[EX_SAVEANGLE] = 8388608;
+global[EX_SPECIAL] = 16777216;
+global[EX_LAYER] = 33554432;
+global[EX_DELAY] = 67108864;
+global[EX_LASER] = 134217728;
+/* 268435456 unused */
+global[EX_HITBOX] = 536870912;
+/* 1073741824 unused */ 
+global[EX_WAIT] = -2147483648;
+
+/* modes for EX_ANGLE (argument c)*/
+global[ANGLE_NORMAL] = 0; /* angle smoothly changes to r, speed changes to s (s can be [NEGF] too use original speed) */
+global[ANGLE_AIMED] = 1; /* angle becomes current angle to the player + r, speed same as above */
+global[ANGLE_SAVED] = 2; /* angle becomes angle saved with EX_SAVEANGLE + r, speed same as above */
+/* I don't understand how 3 works, so there's no constant for it (idk how to name it) */
+global[ANGLE_INSTANT] = 4; /* same as 0, except angle changes instantly and not smoothly */
+global[ANGLE_RANDOM] = 5; /* angle becomes current angle + r*%RANDFS, speed same as above */
+global[ANGLE_RANDOM_AIMED] = 6; /* same as above, except it's current angle to the player + r*%RANDFS */
+global[ANGLE_RANDOM_SPEED] = 7; /* angle = [NEGF], bullet speed = current speed + s*%RANDFS (in this case, s can't be [NEGF]) */
+
+/* values for bouncing */
+/* UDLR - up, down, left, right - allowed  bouncing directions */
+global[BOUNCE_CUSTOM_UDLR] = 47; /* CUSTOM = 5th byte set, so it uses custom wall locations, use with Et_exBounceCustom only (or manually with transformSet/Push) */
+global[BOUNCE_CUSTOM_UDL] = 39;
+global[BOUNCE_CUSTOM_UDR] = 43;
+global[BOUNCE_CUSTOM_UD] = 35;
+global[BOUNCE_CUSTOM_ULR] = 45;
+global[BOUNCE_CUSTOM_UL] = 37;
+global[BOUNCE_CUSTOM_UR] = 41;
+global[BOUNCE_CUSTOM_U] = 33;
+global[BOUNCE_CUSTOM_DLR] = 46;
+global[BOUNCE_CUSTOM_DL] = 38;
+global[BOUNCE_CUSTOM_DR] = 42;
+global[BOUNCE_CUSTOM_D] = 34;
+global[BOUNCE_CUSTOM_LR] = 44;
+global[BOUNCE_CUSTOM_L] = 36;
+global[BOUNCE_CUSTOM_R] = 40;
+global[BOUNCE_CUSTOM] = 32;
+global[BOUNCE_UDLR] = 15;
+global[BOUNCE_UDL] = 7;
+global[BOUNCE_UDR] = 11;
+global[BOUNCE_UD] = 3;
+global[BOUNCE_ULR] = 13;
+global[BOUNCE_UL] = 5;
+global[BOUNCE_UR] = 9;
+global[BOUNCE_U] = 1;
+global[BOUNCE_DLR] = 14;
+global[BOUNCE_DL] = 6;
+global[BOUNCE_DR] = 10;
+global[BOUNCE_D] = 2;
+global[BOUNCE_LR] = 12;
+global[BOUNCE_L] = 4;
+global[BOUNCE_R] = 8;
+global[BOUNCE_NONE] = 0;
+
+/* aim modes */
+/* AT = aim at player, ST = static aim */
+global[AIM_AT] = 0;
+global[AIM_ST] = 1;
+global[AIM_AT_RING] = 2;
+global[AIM_ST_RING] = 3;
+global[AIM_AWAY_RING] = 4;
+global[AIM_ST_RING2] = 5;
+global[AIM_RAND] = 6;
+global[AIM_RAND_RING] = 7;
+global[AIM_MEEK] = 8;
+global[AIM_AT_PYRAMID] = 9;
+global[AIM_ST_PYRAMID] = 10;
+global[AIM_PEANUT] = 11;
+global[AIM_PEANUT2] = 12;

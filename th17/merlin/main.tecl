@@ -1,0 +1,3 @@
+#eclmap "th17.eclm"
+#include "globals/main.tecl"
+#include "ecl/main.tecl"
