@@ -15,6 +15,7 @@ To use MERLIN, put the folder of the right game version alongside your ECL scrip
 ### Supported games
 - th16
 - th17
+  
 most values from 16/17 should work with 13-15 as well.
 
 ### Features
