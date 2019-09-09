@@ -13,7 +13,9 @@ It's an ECL library that aims to make writing custom ECL code easier and more fr
 To use MERLIN, put the folder of the right game version alongside your ECL scripts, and use `#include "merlin/main.tecl"`. If you'd rather not pollute your compiled ECL script with other functions, load the precompiled `merlin.ecl` with `ecli` and use `#include "merlin/globals.tecl"` to load the constants and the ECLMAP. 
 
 ### Supported games
-Only th16 so far, though I think most values should work in th15 and th17 too.
+- th16
+- th17
+most values from 16/17 should work with 13-15 as well.
 
 ### Features
 Lots of global constants:
