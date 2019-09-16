@@ -191,7 +191,7 @@ sub etExDefineShootSet(int et, int channel, int slot, int a, int b, int c, int d
 	etExSet2(et, slot, channel, [EX_DEFINESHOOT], a, b, c, d, [NEGF], [NEGF], [NEGF], [NEGF]);
 }
 
-sub etExDefineShoot(int et, int channel, int slot, int a, int b, int c, int d) {
+sub etExDefineShoot(int et, int channel, int a, int b, int c, int d) {
 	etEx2(et, channel, [EX_DEFINESHOOT], a, b, c, d, [NEGF], [NEGF], [NEGF], [NEGF]);
 }
 

@@ -1,5 +1,5 @@
-global[ITEM_POINT] = 1;
-global[ITEM_POWER] = 2;
+global[ITEM_POINT] = 2;
+global[ITEM_POWER] = 1;
 global[ITEM_BIG_POWER] = 3;
 global[ITEM_LIFE_PIECE] = 4;
 global[ITEM_LIFE] = 5;
