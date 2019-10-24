@@ -1,0 +1,4 @@
+
+sub etOnAuto(int et, int del, int n);
+
+sub merlin_effCharge(int pnt, int speed, int r);

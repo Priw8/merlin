@@ -7,10 +7,15 @@
 **N**o clue what the last 2 letters could stand for lmao  
 
 ### What is this?  
-It's an ECL library that aims to make writing custom ECL code easier and more friendly. It is intended to be used with a thecl version that supports global definitions, \#eclmap, \#include and calling subs by name - so any versions after [this commit](https://github.com/thpatch/thtk/commit/fa516d1f32327254e5fdb887aab6a742f64a5331) will work.
+It's an ECL library that aims to make writing custom ECL code easier and more friendly. It is intended to be used with a thecl version that supports global definitions, \#eclmap, \#include, calling subs by name and inline subs.
 
 ### Usage
-To use MERLIN, put the folder of the right game version alongside your ECL scripts, and use `#include "merlin/main.tecl"`. If you'd rather not pollute your compiled ECL script with other functions, load the precompiled `merlin.ecl` with `ecli` and use `#include "merlin/globals.tecl"` to load the constants and the ECLMAP. 
+There are 2 ways to use MERLIN:
+- put the folder of the right game version alongside your ECL scripts, and use `#include "merlin/main.tecl"`.
+- if you'd rather keep MERLIN functions in a separate file, use `#include "merlin/globals.tecl"` to include only global constant definitions, inline sub definitions, and forward declarations of subs from the compiled `merlin.ecl`. Then, simply include the compiled MERLIN with `ecli`.
+
+In both cases, an [ECLMAP](https://github.com/Priw8/eclmap) is loaded automatically.
+
 
 ### Supported games
 - th16
@@ -34,13 +39,13 @@ Lots of global constants:
 - some constants for the transforms, like `[BOUNCE_UDL] = 7` for defining on which walls the bullet is allowed to bounce
 - aim modes for ins_607 (`etAim`)
   
-Some subroutines:
+Some subroutines, many of which are inline:
 - `@setupNon()`, `@setupCard()` subs to be called before every nonspell/spellcard (the same thing that ZUN copypastes everywhere, reset boss parameters, clear bullets, reset vars etc)
 - `@stop()` - waits forever
 - `@etOnAuto(int etId, int interval, int n)` - makes the bullet manager `etId` shoot bullets every `interval` frames, and repeat it `n` times. Made with stage design in mind, for boss patterns you should make more complex stuff obviously.
 - separate subs for every bullet transform type, so you can do `@etExWait(etId, channel, time)` instead of `etEx(etId, channel, [EX_WAIT] time, [NEG], [NEGF], [NEGF])`
 - `@effCharge(int pnt, int speed)` that allows easily creating more customizable boss appear effects than the ones in default.ecl. There are versions for different colors, like `effChargeGreen`.
-- and some other small things, check `thxx/merlin/ecl/other.tecl` for details.
+- and some other small things, check `thxx/merlin/ecl/` and `thxx/merlin/inline/` for details (documentation will be crreated at some point).
 
 There are comments in the code, so you can refer to them.
 

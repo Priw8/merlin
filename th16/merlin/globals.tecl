@@ -1,2 +1,4 @@
 #eclmap "th16.eclm"
 #include "globals/main.tecl"
+#include "ecl/header.tecl"
+#include "inline/main.tecl"

@@ -1,4 +1,4 @@
-sub merlin_effCharge(int pnt, int speed, int r) {
+void merlin_effCharge(int pnt, int speed, int r) {
 	if ((speed > 0) && (speed <= 3)) {
 		playSound([SE_APPEAR]);
 
@@ -18,41 +18,3 @@ sub merlin_effCharge(int pnt, int speed, int r) {
 		}
 	}
 } 
-
-/* charge effects (the ones used when a boss spawns), pnt is the amount of individual affects spawned (charge points), speed is an integer from 1 to 3 that defines animation speed, bigger = faster */
-/* there are many colors to choose from */
-
-sub effCharge(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_BLACK_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}
-
-sub effChargeRed(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_RED_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}
-
-sub effChargeGreen(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_GREEN_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}
-
-sub effChargeBlue(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_BLUE_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}
-
-sub effChargeYellow(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_YELLOW_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}
-
-sub effChargePurple(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_PURPLE_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}
-
-sub effChargeCyan(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_CYAN_RIGHT];
-	@merlin_effCharge(pnt, speed, [-1]);
-}

@@ -1,5 +1,5 @@
 /* waits forever */
-sub stop() {
+inline void stop() {
 LOOP:
 	wait(1000);
 	goto LOOP @ 0;
@@ -7,7 +7,7 @@ LOOP:
 
 
 /* to be called before every spellcard declaration */
-sub setupCard() {
+inline void setupCard() {
 	if (TIMEOUT == 0) {
 		etCancel(1640.0f); /* ZUN does 640.0f, but we all know what happened with Sinkable Vortex in UFO... */
 	} else {
@@ -29,7 +29,7 @@ sub setupCard() {
 }
 
 /* to be called before every nonspelll */
-sub setupNon() {
+inline void setupNon() {
 	setInvuln(120);
     if (TIMEOUT == 0) {
 		etCancel(1640.0f);
@@ -52,7 +52,7 @@ sub setupNon() {
 }
 
 /* drops point and power items */
-sub dropPointPower(int point, int power) {
+inline void dropPointPower(int point, int power) {
 	dropClear();
 	dropMain(0);
 	dropExtra([ITEM_POINT], point);
@@ -62,7 +62,7 @@ sub dropPointPower(int point, int power) {
 }
 
 /* drops point items, power items and an additational item defined by ex*/
-sub dropPointPowerEx(int point, int power, int ex) {
+inline void dropPointPowerEx(int point, int power, int ex) {
 	dropClear();
 	dropMain(ex);
 	dropExtra([ITEM_POINT], point);
