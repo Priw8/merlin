@@ -2,36 +2,36 @@
 /* there are many colors to choose from */
 
 inline void effCharge(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_BLACK_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_BLACK_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }
 
 inline void effChargeRed(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_RED_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_RED_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }
 
 inline void effChargeGreen(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_GREEN_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_GREEN_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }
 
 inline void effChargeBlue(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_BLUE_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_BLUE_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }
 
 inline void effChargeYellow(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_YELLOW_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_YELLOW_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }
 
 inline void effChargePurple(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_PURPLE_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_PURPLE_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }
 
 inline void effChargeCyan(int pnt, int speed) {
-	((speed - 1) * 14) + [EFF_CHARGE_CYAN_RIGHT];
+	((speed - 1) * 14) + EFF_CHARGE_CYAN_RIGHT;
 	@merlin_effCharge(pnt, speed, [-1]);
 }

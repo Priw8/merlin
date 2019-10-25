@@ -55,8 +55,8 @@ inline void setupNon() {
 inline void dropPointPower(int point, int power) {
 	dropClear();
 	dropMain(0);
-	dropExtra([ITEM_POINT], point);
-	dropExtra([ITEM_POWER], power);
+	dropExtra(ITEM_POINT, point);
+	dropExtra(ITEM_POWER, power);
 	dropArea(64.0f, 64.0f);
 	dropItems();
 }
@@ -65,8 +65,8 @@ inline void dropPointPower(int point, int power) {
 inline void dropPointPowerEx(int point, int power, int ex) {
 	dropClear();
 	dropMain(ex);
-	dropExtra([ITEM_POINT], point);
-	dropExtra([ITEM_POWER], power);
+	dropExtra(ITEM_POINT, point);
+	dropExtra(ITEM_POWER, power);
 	dropArea(64.0f, 64.0f);
 	dropItems();
 }

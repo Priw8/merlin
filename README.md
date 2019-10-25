@@ -14,7 +14,7 @@ There are 2 ways to use MERLIN:
 - put the folder of the right game version alongside your ECL scripts, and use `#include "merlin/main.tecl"`.
 - if you'd rather keep MERLIN functions in a separate file, use `#include "merlin/globals.tecl"` to include only global constant definitions, inline sub definitions, and forward declarations of subs from the compiled `merlin.ecl`. Then, simply include the compiled MERLIN with `ecli`.
 
-In both cases, an [ECLMAP](https://github.com/Priw8/eclmap) is loaded automatically.
+In both cases, an ECLMAP(https://github.com/Priw8/eclmap) is loaded automatically.
 
 
 ### Supported games
@@ -25,25 +25,25 @@ most values from 16/17 should work with 13-15 as well.
 
 ### Features
 Lots of global constants:
-- bullet types (like `[ET_BUBBLE]`)
-- bullet colors (`[COLOR16_BLUE]` for bullets with 16 colors, `[COLOR8_BLUE]` for 8 colors etc)
-- enemy sprites from enemy.anm (`[ENM_GIRL_S_BLUE]`, `[ENM_CIR_RED]` etc)
-- aura sprites from enemy.anm (`[ENM_AURA_S_RED]`, `[ENM_AURA_L_BLUE]` etc)
-- things from effect.anm (like `[EFF_EXPLODE_LARGE]` for boss explosions, but also some particles)
-- sound effects, both as file names (`[SE_PLST00]`) and custom names (`[SE_PLAYER_SHOOT]`)
-- flags for `flagSet` and `flagClear` instructions, like `[FLAG_NO_HITBOX]`
-- items (`[ITEM_POWER]`, `[ITEM_F]`...)
-- movement modes for instructions such as Move_posTime (`[MODE_ACCEL]`, `[MODE_LINEAR]`...)
-- math constants like `[PI]`, `[TAU]` and also ZUN's magic numbers (`[NEG] = -999999`, `[NEGF] = -999999.0f`)
-- bullet transformation types (`[EX_WAIT]`, `[EX_ACCEL]`...)
-- some constants for the transforms, like `[BOUNCE_UDL] = 7` for defining on which walls the bullet is allowed to bounce
+- bullet types (like `ET_BUBBLE`)
+- bullet colors (`COLOR16_BLUE` for bullets with 16 colors, `COLOR8_BLUE` for 8 colors etc)
+- enemy sprites from enemy.anm (`ENM_GIRL_S_BLUE`, `ENM_CIR_RED` etc)
+- aura sprites from enemy.anm (`ENM_AURA_S_RED`, `ENM_AURA_L_BLUE` etc)
+- things from effect.anm (like `EFF_EXPLODE_LARGE` for boss explosions, but also some particles)
+- sound effects, both as file names (`SE_PLST00`) and custom names (`SE_PLAYER_SHOOT`)
+- flags for `flagSet` and `flagClear` instructions, like `FLAG_NO_HITBOX`
+- items (`ITEM_POWER`, `ITEM_F`...)
+- movement modes for instructions such as Move_posTime (`MODE_ACCEL`, `MODE_LINEAR`...)
+- math constants like `PI`, `TAU` and also ZUN's magic numbers (`NEG = -999999`, `NEGF = -999999.0f`)
+- bullet transformation types (`EX_WAIT`, `EX_ACCEL`...)
+- some constants for the transforms, like `BOUNCE_UDL = 7` for defining on which walls the bullet is allowed to bounce
 - aim modes for ins_607 (`etAim`)
   
 Some subroutines, many of which are inline:
 - `@setupNon()`, `@setupCard()` subs to be called before every nonspell/spellcard (the same thing that ZUN copypastes everywhere, reset boss parameters, clear bullets, reset vars etc)
 - `@stop()` - waits forever
 - `@etOnAuto(int etId, int interval, int n)` - makes the bullet manager `etId` shoot bullets every `interval` frames, and repeat it `n` times. Made with stage design in mind, for boss patterns you should make more complex stuff obviously.
-- separate subs for every bullet transform type, so you can do `@etExWait(etId, channel, time)` instead of `etEx(etId, channel, [EX_WAIT] time, [NEG], [NEGF], [NEGF])`
+- separate subs for every bullet transform type, so you can do `@etExWait(etId, channel, time)` instead of `etEx(etId, channel, EX_WAIT time, NEG, NEGF, NEGF)`
 - `@effCharge(int pnt, int speed)` that allows easily creating more customizable boss appear effects than the ones in default.ecl. There are versions for different colors, like `effChargeGreen`.
 - and some other small things, check `thxx/merlin/ecl/` and `thxx/merlin/inline/` for details (documentation will be crreated at some point).
 
@@ -54,11 +54,11 @@ Example ECL code created with MERLIN:
 sub Boss() {
 	setBoss(0);
 	movePos(0.0f, 128.0f);
-	flagSet([FLAG_INTANGIBLE]);
+	flagSet(FLAG_INTANGIBLE);
 	@effChargeGreen(3, 1);
 	wait(120);
 
-	flagClear([FLAG_INTANGIBLE]);
+	flagClear(FLAG_INTANGIBLE);
 	anmSelect(3);
 	anmSetMain(0, 0);
 	setHurtbox(56.0f, 56.0f);
@@ -93,15 +93,15 @@ sub BossNon1_at() {
 
 		if (n == 0) {
 			etCount(et, 52, 2);
-			etSprite(et, [ET_BUTTERFLY], [COLOR8_GREEN]);
-			@etExBounceSet(et, 0, 1, 1, [BOUNCE_U], [NEGF]);
-			@etExAngleSet(et, 0, 2, 0, 1, [ANGLE_RANDOM], 0.12f, [NEGF]);
+			etSprite(et, ET_BUTTERFLY, COLOR8_GREEN);
+			@etExBounceSet(et, 0, 1, 1, BOUNCE_U, NEGF);
+			@etExAngleSet(et, 0, 2, 0, 1, ANGLE_RANDOM, 0.12f, NEGF);
 		} else if (n == 1) {
-			etSprite(et, [ET_BUTTERFLY], [COLOR8_BLUE]);
-			@etExBounceSet(et, 0, 1, 1, [BOUNCE_L], [NEGF]);
+			etSprite(et, ET_BUTTERFLY, COLOR8_BLUE);
+			@etExBounceSet(et, 0, 1, 1, BOUNCE_L, NEGF);
 		} else if (n == 2) {
-			etSprite(et, [ET_BUTTERFLY], [COLOR8_PINK]);
-			@etExBounceSet(et, 0, 1, 1, [BOUNCE_R], [NEGF]);
+			etSprite(et, ET_BUTTERFLY, COLOR8_PINK);
+			@etExBounceSet(et, 0, 1, 1, BOUNCE_R, NEGF);
 		}
 		etOn(et);
 
@@ -113,9 +113,9 @@ sub BossNon1_at() {
 
 sub BossNon1_at2() {
 	int et = 0;
-	flagSet([FLAG_INTANGIBLE]);
+	flagSet(FLAG_INTANGIBLE);
 	etNew(et);
-	etSprite(et, [ET_SHARD], [COLOR16_GREEN]);
+	etSprite(et, ET_SHARD, COLOR16_GREEN);
 	etCount(et, 5, 1);
 	etAim(et, 1);
 	etSpeed(et, 3.0f, 0.0f);
