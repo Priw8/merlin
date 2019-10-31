@@ -7,7 +7,7 @@
 **N**o clue what the last 2 letters could stand for lmao  
 
 ### What is this?  
-It's an ECL library that aims to make writing custom ECL code easier and more friendly. It is intended to be used with a thecl version that supports global definitions, \#eclmap, \#include, calling subs by name and inline subs.
+It's an ECL library that aims to make writing custom ECL code easier and more friendly. It only works with thecl from [thtk release 12](https://github.com/thpatch/thtk/releases/tag/12) (and later versions).
 
 ### Usage
 There are 2 ways to use MERLIN:
