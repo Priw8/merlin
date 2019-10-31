@@ -14,7 +14,7 @@ There are 2 ways to use MERLIN:
 - put the folder of the right game version alongside your ECL scripts, and use `#include "merlin/main.tecl"`.
 - if you'd rather keep MERLIN functions in a separate file, use `#include "merlin/globals.tecl"` to include only global constant definitions, inline sub definitions, and forward declarations of subs from the compiled `merlin.ecl`. Then, simply include the compiled MERLIN with `ecli`.
 
-In both cases, an ECLMAP(https://github.com/Priw8/eclmap) is loaded automatically.
+In both cases, an [ECLMAP](https://github.com/Priw8/eclmap) is loaded automatically.
 
 
 ### Supported games
