@@ -51,7 +51,7 @@ There are comments in the code, so you can refer to them.
 
 Example ECL code created with MERLIN:  
 ```cpp
-sub Boss() {
+void Boss() {
 	setBoss(0);
 	movePos(0.0f, 128.0f);
 	flagSet(FLAG_INTANGIBLE);
@@ -67,7 +67,7 @@ sub Boss() {
 	@stop();
 }
 
-sub BossNon1() {
+void BossNon1() {
 	lifeSet(9400);
 	@setupNon();
 	setNext(0, 1700, 2500, "BossCard1");
@@ -77,7 +77,7 @@ sub BossNon1() {
 	@stop();
 }
 
-sub BossNon1_at() {
+void BossNon1_at() {
 	int et = 0;
 	etNew(et);
 	etAim(et, 3);
@@ -106,12 +106,13 @@ sub BossNon1_at() {
 		etOn(et);
 
 		n += 1;
-		if (n > 2) n = 0;
+		if (n > 2)
+			n = 0;
 		wait(70);
 	}
 }
 
-sub BossNon1_at2() {
+void BossNon1_at2() {
 	int et = 0;
 	flagSet(FLAG_INTANGIBLE);
 	etNew(et);
