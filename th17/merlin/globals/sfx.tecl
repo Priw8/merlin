@@ -83,79 +83,84 @@ global SE_CHANGEITEM = 78;
 global SE_TROPHY = 79;
 
 /* by names I gave to the sounds */
-/* names that are the same as the ones above are commented out... */
 global SE_PLAYER_SHOOT = 0;
+global SE_PLAYER_SHOOT_LOUD = 1;
 
 global SE_PLAYER_DEAD = 2;
-global SE_ENEMY_DEAD = 3;
-global SE_ENEMY_EXPLODE = 5;
-global SE_BOOM = 6;
+global SE_POOF = 3;
+/* 4 seems to be exactly the same as poof */
+global SE_EXPLODE = 5;
+global SE_EXPLODE2 = 6;
 global SE_OK = 7;
+/* 8 seems same as ok */
 global SE_CANCEL = 9;
 global SE_SELECT = 10;
 global SE_TIMEOUT1 = 11;
 global SE_TIMEOUT2 = 12;
-/*global SE_POWERUP = 13;
-global SE_PAUSE = 14;*/
+global SE_POWERUP = 13;
+global SE_PAUSE = 14;
 global SE_CAPTURE = 15;
 global SE_INVALID = 16;
 global SE_EXTEND = 17;
-global SE_LASER1 = 18;
+global SE_LASER = 18;
 global SE_LASER2 = 19;
 global SE_PLAYER_LASER = 20;
-global SE_ENEMY_SHOOT1 = 21;
-global SE_ENEMY_SHOOT2 = 22;
-global SE_ENEMY_SHOOT3 = 23;
-global SE_ENEMY_SHOOT1_LOUD = 24;
-
-global SE_POWER1 = 28;
-global SE_POWER2 = 29;
-global SE_CAMERA_CHARGE = 30;
-global SE_CAMERA_CHARGED = 31;
+global SE_SHOOT = 21;
+global SE_SHOOT2 = 22;
+global SE_SHOOT3 = 23;
+global SE_SHOOT_LOUD = 24;
+global SE_SHOOT2_LOUD = 25;
+global SE_SHOOT3_LOUD = 26;
+/* 27 seems the same as SHOOT_LOUD */
+global SE_CHARGE2 = 28;
+global SE_CHARGE3 = 29;
+global SE_CHARGE4 = 30;
+global SE_CHARGED = 31;
 global SE_SEAL = 32;
-global SE_CARD_DECLARE = 33;
-global SE_DAMAGE1 = 34;
+global SE_CARD = 33;
+global SE_DAMAGE = 34;
 global SE_DAMAGE2 = 35;
-/*global SE_NODAMAGE = 36;*/
+global SE_INVULN = 36;
 global SE_ITEM = 37;
-global SE_MAGIC1 = 38;
+global SE_MAGIC = 38;
 global SE_MAGIC2 = 39;
 global SE_MAGIC3 = 40;
-
-/*global SE_GRAZE = 42;*/
-
+global SE_MAGIC_LOUD = 41;
+global SE_GRAZE = 42;
+/* 43 is also graze */
 global SE_SLASH = 44;
-
-global SE_BONUS1 = 47;
-/*global SE_BONUS2 = 48;*/
+global SE_SLASH2 = 45;
+/* 46 same as SE_CAPTURE */
+global SE_BONUS = 47;
+global SE_BONUS2 = 48;
 global SE_SPARK = 49;
-global SE_START1 = 50;
-global SE_NOISE1 = 51;
-global SE_START2 = 52;
-
-global SE_APPEAR = 54;
-global SE_SLASH_CHARGED = 55;
-global SE_FULL = 56;
+global SE_BOON = 50;
+global SE_NOISE = 51;
+global SE_BOON2 = 52;
+/* Same as boon2 */
+global SE_CHARGE = 54;
+global SE_CHARGED2 = 55;
+global SE_CHARGED3 = 56;
 global SE_BONUS3 = 57;
-global SE_BONUS5 = 58;
-global SE_NOTE1 = 59;
+global SE_BONUS5 = 58; /* bonus 4 is used by sound 74 in filenames */
+global SE_NOTE = 59;
 global SE_NOTE2 = 60;
 global SE_NOTE3 = 61;
 global SE_SQUEAK = 62;
 global SE_FILL = 63;
-global SE_MSL1 = 64;
-global SE_MSL2 = 65;
+global SE_MISSLE = 64;
+global SE_MISSLE2 = 65;
 global SE_HYPER_END = 66;
 global SE_HEAL = 67;
-global SE_MSL3 = 68;
-global SE_FAULT = 69;
+global SE_MISSLE3 = 68;
+global SE_LAUGH = 69;
 global SE_NOISE2 = 70;
-/*global SE_ETBREAK = 71;*/
+global SE_ETBREAK = 71;
 global SE_NOISE3 = 72;
 global SE_HOWL = 73;
-/*global SE_BONUS4 = 74;*/
-/*global SE_BIG = 75;*/
+global SE_BONUS4 = 74;
+global SE_GROW = 75;
 global SE_ITEM2 = 76;
-/*global SE_RELEASE = 77;*/
-global SE_TOKEN = 78;
-global SE_ACHIEVEMENT = 79;
+global SE_RELEASE = 77;
+global SE_SWITCH = 78;
+global SE_ACHIEVEMENT = 79
