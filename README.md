@@ -7,12 +7,12 @@
 **N**o clue what the last 2 letters could stand for lmao  
 
 ### What is this?  
-It's an ECL library that aims to make writing custom ECL code easier and more friendly. It only works with thecl from [thtk release 12](https://github.com/thpatch/thtk/releases/tag/12) (and later versions).
+It's an ECL library that aims to make writing custom ECL code easier and more friendly. It needs a `thecl` version from commit `c63c782c0d4ac80b6562c6b679d81ca8e17ddede` or later. Feel free to join the [ZUNcode discord](https://discord.gg/fvPJvHJ) if need help or want to ask any questions.
 
 ### Usage
 There are 2 ways to use MERLIN:
-- put the folder of the right game version alongside your ECL scripts, and use `#include "merlin/main.tecl"`.
-- if you'd rather keep MERLIN functions in a separate file, use `#include "merlin/globals.tecl"` to include only global constant definitions, inline sub definitions, and forward declarations of subs from the compiled `merlin.ecl`. Then, simply include the compiled MERLIN with `ecli`.
+- use `#include "merlin/thxx.tecl"`, with `xx` being the game number, for example `th17.tecl` for WBaWC.
+- if you'd rather keep MERLIN functions in a separate file, use `#include "merlin/thxxglobals.tecl"` to include only global constant definitions, inline sub definitions, and forward declarations of subs from the compiled `merlin/thxx/merlin.ecl`. Then, simply include the compiled MERLIN with `ecli`.
 
 In both cases, an [ECLMAP](https://github.com/Priw8/eclmap) is loaded automatically.
 
@@ -45,7 +45,7 @@ Some subroutines, many of which are inline:
 - `@etOnAuto(int etId, int interval, int n)` - makes the bullet manager `etId` shoot bullets every `interval` frames, and repeat it `n` times. Made with stage design in mind, for boss patterns you should make more complex stuff obviously.
 - separate subs for every bullet transform type, so you can do `@etExWait(etId, channel, time)` instead of `etEx(etId, channel, EX_WAIT time, NEG, NEGF, NEGF)`
 - `@effCharge(int pnt, int speed)` that allows easily creating more customizable boss appear effects than the ones in default.ecl. There are versions for different colors, like `effChargeGreen`.
-- and some other small things, check `thxx/merlin/ecl/` and `thxx/merlin/inline/` for details (documentation will be crreated at some point).
+- and some other small things, check the library code for details (documentation will be created at some point).
 
 There are comments in the code, so you can refer to them.
 
