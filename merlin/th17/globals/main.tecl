@@ -1,0 +1,4 @@
+#include "enm.tecl"
+#include "effect.tecl"
+#include "item.tecl"
+#include "sfx.tecl"

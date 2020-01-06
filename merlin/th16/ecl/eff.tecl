@@ -1,6 +1,6 @@
 void merlin_effCharge(int pnt, int speed, int r) {
 	if ((speed > 0) && (speed <= 3)) {
-		playSound(SE_APPEAR);
+		playSound(SE_CHARGE);
 
 		int l = r + 1;
 		float angleInc = TAU / _f(pnt);
@@ -8,7 +8,7 @@ void merlin_effCharge(int pnt, int speed, int r) {
 		int n = pnt;
 
 		while(pnt--) {
-			if !(n % 2) {
+			unless (n % 2) {
 				if (pnt % 2) anmPlayRotate(ANM_EFFECT, r, angle);
 				else anmPlayRotate(ANM_EFFECT, l, angle);
 			} else {

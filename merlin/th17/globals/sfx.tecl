@@ -1,0 +1,10 @@
+/* 2 new sounds added in th17, rest same as th16 */
+/* by file names */
+/* NAME_ = duplicate id */
+
+global SE_CHANGEITEM = 78;
+global SE_TROPHY = 79;
+
+/* by names I gave to the sounds */
+global SE_SWITCH = 78;
+global SE_ACHIEVEMENT = 79;

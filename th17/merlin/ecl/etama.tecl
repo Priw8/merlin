@@ -1,6 +1,0 @@
-void etOnAuto(int et, int del, int n) {
-	while(n--) {
-		etOn(et);
-		wait(del);
-	}
-}

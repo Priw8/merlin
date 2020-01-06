@@ -1,5 +1,0 @@
-global MODE_LINEAR = 0;
-global MODE_ACCEL = 1;
-global MODE_DECEL = 4;
-global MODE_DECCEL = 4; /* I feel like this is an inevitable typo */
-global MODE_SMOOTH = 9;

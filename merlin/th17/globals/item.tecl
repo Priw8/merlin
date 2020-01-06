@@ -1,19 +1,4 @@
-global ITEM_POINT = 2;
-global ITEM_POWER = 1;
-global ITEM_BIG_POWER = 3;
-global ITEM_LIFE_PIECE = 4;
-global ITEM_LIFE = 5;
-global ITEM_BOMB_PIECE = 6;
-global ITEM_BOMB = 7;
-global ITEM_F = 8;
-global ITEM_PIV_5 = 9;
-global ITEM_PIV_10 = 10;
-global ITEM_PIV_20 = 11;
-global ITEM_PIV_30 = 12;
-global ITEM_PIV_40 = 13;
-global ITEM_PIV_50 = 14;
-global ITEM_DDC = 15;
-
+/* tokens added in th17, rest the same as th16 */
 global TOKEN_WOLF = 16;
 global TOKEN_OTTER = 17;
 global TOKEN_EAGLE = 18;

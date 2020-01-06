@@ -13,9 +13,8 @@ inline void setupCard() {
 	} else {
 		etClear(1640.0f);
 	}
-    @BossItemCard();
     timerReset();
-    unknown21();
+    killAllAsync();
     enmKillAll();
     spellEnd();
     funcSet(0);
@@ -38,7 +37,7 @@ inline void setupNon() {
 	}
     moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
     timerReset();
-    unknown21();
+    killAllAsync();
     enmKillAll();
     spellEnd();
     funcSet(0);

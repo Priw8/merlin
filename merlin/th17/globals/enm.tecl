@@ -1,0 +1,13 @@
+/* th17 enemy.anm */
+
+/* enemy sprites added in th17, rest same as th16 */
+
+global ENM_GIRL_S_BLUE_GLOW = 172;
+global ENM_GIRL_S_RED_GLOW = 177;
+global ENM_GIRL_S_GREEN_GLOW = 182;
+global ENM_GIRL_S_YELLOW_GLOW = 187;
+global ENM_GIRL_S_BLUE_ALT_GLOW = 192;
+global ENM_GIRL_S_RED_ALT_GLOW = 197;
+global ENM_GIRL_M_RED_GLOW = 202;
+global ENM_GIRL_M_BLUE_GLOW = 207;
+global ENM_GIRL_L_GLOW = 212;

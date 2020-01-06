@@ -1,0 +1,8 @@
+#eclmap "eclmap/th17.eclm"
+
+// inherit th16
+#include "th16/globals/main.tecl"
+#include "th17/globals/main.tecl"
+
+#include "th16/ecl/main.tecl"
+#include "th16/inline/main.tecl"
