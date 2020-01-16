@@ -1,7 +1,7 @@
 [title=MERLIN - about]
 [Back to index](#s=MERLIN/doc/index)  
 
-[include=merlin/README]
+[include=MERLIN/README]
 (ignore the above, it's there to the fact that this was pulled directly from the repo readme!)
 
 Example ECL code created with MERLIN:  
