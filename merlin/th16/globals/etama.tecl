@@ -15,6 +15,7 @@ global ET_AMULET = 11;
 global ET_ARROWHEAD = 12;
 global ET_BULLET = 13;
 global ET_LASERHEAD = 14;
+global ET_BACTERIA = 15;
 global ET_STAR = 16;
 global ET_COIN = 17;
 global ET_MENTOS = 18;
