@@ -1,5 +1,5 @@
 [title=MERLIN - about]
-[Back to index](#s=merlin/doc/index)  
+[Back to index](#s=MERLIN/doc/index)  
 
 [include=merlin/README]
 (ignore the above, it's there to the fact that this was pulled directly from the repo readme!)
@@ -83,4 +83,4 @@ Example ECL code created with MERLIN:
 [/code]
 [/requireEclmap]  
 
-[Back to index](#s=merlin/doc/index)
+[Back to index](#s=MERLIN/doc/index)

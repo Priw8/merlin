@@ -1,5 +1,5 @@
 [title=MERLIN - constants - misc. bullet-related]
-[Back to index](#s=merlin/doc/index)  
+[Back to index](#s=MERLIN/doc/index)  
 
 ## Various other bullet constants
 
@@ -36,4 +36,4 @@ For more detailed explanations of aim modes, refer to the [ECL tutorial](#b=ecl-
 |`AIM_AT_PEANUT`  | Peanut aimed at the player. Aim mode 11.                    |
 |`AIM_ST_PEANUT`  | Peanut aimed statically. Aim mode 12.                       |
 
-[Back to index](#s=merlin/doc/index)  
+[Back to index](#s=MERLIN/doc/index)  

@@ -1,5 +1,5 @@
 [title=MERLIN - constants - bullet types]
-[Back to index](#s=merlin/doc/index)  
+[Back to index](#s=MERLIN/doc/index)  
 
 ## Bullet type constants
 
@@ -59,4 +59,4 @@ MERLIN defines constants for all bullet types and colors. The table below shows 
 |`ET_NOTE_PURPLE`     |`COLOR_NEG`    | [et=42,0,15]| Color must be 0.             |
 
 
-[Back to index](#s=merlin/doc/index)  
+[Back to index](#s=MERLIN/doc/index)  
