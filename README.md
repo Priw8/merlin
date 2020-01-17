@@ -47,4 +47,4 @@ Some subroutines, many of which are inline:
 - `@effCharge(int pnt, int speed)` that allows easily creating more customizable boss appear effects than the ones in default.ecl. There are versions for different colors, like `effChargeGreen`.
 - and some other small things, check the library code for details (documentation will be created at some point).
 
-For documentation and examples, visit the website: [documentation](https://priw8.github.io/#s=merlin/doc/index).
+For documentation and examples, visit the website: [documentation](https://priw8.github.io/#s=MERLIN/doc/index).
