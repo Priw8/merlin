@@ -1,4 +1,5 @@
-#eclmap "th17.eclm"
+#eclmap "eclmap/th17.eclm"
+
 #include "th16/globals/main.tecl"
 #include "th17/globals/main.tecl"
 
