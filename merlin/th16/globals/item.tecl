@@ -13,3 +13,4 @@ global ITEM_PIV_30 = 12;
 global ITEM_PIV_40 = 13;
 global ITEM_PIV_50 = 14;
 global ITEM_DDC = 15;
+global ITEM_SEASON = 16;
