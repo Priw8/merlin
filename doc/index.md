@@ -5,5 +5,6 @@
     - [Bullet types](#s=MERLIN/doc/globals/etama)
     - [Misc. bullet-related](#s=MERLIN/doc/globals/etama-etc)
     - [Enemy types](#s=MERLIN/doc/globals/enemy)
+    - [Sound effects](#s=MERLIN/doc/globals/sfx)
   
 (WIP)
