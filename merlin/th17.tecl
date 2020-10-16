@@ -1,4 +1,4 @@
-#eclmap "eclmap/th17.eclm"
+#eclmap "eclmap/eclmap/th17.eclm"
 
 // inherit th16
 #include "th16/globals/main.tecl"
