@@ -3,13 +3,7 @@
 
 ## Various other bullet constants
 
-### Bullet transformation (etEx) IDs
-Will be added together with the transformation table, TODO.
-
-### `c` argument for `EX_ANGLE` transformation
-These constants need reworking. It is also possible that the name will change from `EX_ANGLE` to something else. TODO
-
-### Walls for `EX_BOUNCE` and `EX_WRAP` transformations
+### Walls for `etExBounce` and `etExWrap` transformations
 The constant can be combined by using the bitwise OR operator in order to allow bouncing on multiple walls (e.g. `BOUNCE_U | BOUNCE_L`). You can also use the combined constants (not listed in this table to keep it small) such as `BOUNCE_UL` for up and left. There is a constant for every possible combination of walls, but keep in mind that the letters must be given in the same order as the constant appear in the table (`UDLR`), for example `BOUNCE_UDR`.
 | Constant        | Function                             |
 |:---------------:|:-------------------------------------|
