@@ -87,11 +87,11 @@ global COLOR_NEG = 0; /* for single color bullets if someone REALLY likes consta
 
 /* bullet transformations */
 
-global EX_DIST = 1;
+global EX_SPEEDUP = 1; // Note: formerly EX_DIST
 global EX_ANIM = 2;
 global EX_ACCEL = 4;
 global EX_ANGLE_ACCEL = 8;
-global EX_ANGLE = 16;
+global EX_STEP = 16; // Note: formerly EX_ANGLE
 /* 32 is not used */
 global EX_BOUNCE = 64;
 global EX_INVULN = 128;
@@ -100,18 +100,18 @@ global EX_SETSPRITE = 512;
 global EX_DELETE = 1024;
 global EX_PLAYSOUND = 2048;
 global EX_WRAP = 4096;
-global EX_SHOOT = 8192;
-global EX_DEFINESHOOT = 16384;
+global EX_SHOOTPREP = 8192;
+global EX_SHOOT = 16384;
 global EX_REACT = 32768;
 global EX_GOTO = 65536;
 global EX_MOVE = 131072;
 global EX_VEL = 262144;
 global EX_VELADD = 524288;
 global EX_BRIGHT = 1048576;
-global EX_VELTIME = 2097152;
+global EX_ACCELWEIRD = 2097152; // Note: formerly EX_VELTIME
 global EX_SIZE = 4194304;
-global EX_SAVEANGLE = 8388608;
-global EX_SPECIAL = 16777216;
+global EX_SAVE = 8388608; // Note: formerly EX_SAVEANGLE
+global EX_ENMCREATE = 16777216; // Note: formerly EX_SPECIAL
 global EX_LAYER = 33554432;
 global EX_DELAY = 67108864;
 global EX_LASER = 134217728;
@@ -120,7 +120,7 @@ global EX_HITBOX = 536870912;
 /* 1073741824 unused */ 
 global EX_WAIT = -2147483648;
 
-/* modes for EX_ANGLE (argument c)*/
+/* modes for EX_STEP (argument c)*/
 global ANGLE_NORMAL = 0; /* angle smoothly changes to r, speed changes to s (s can be NEGF too use original speed) */
 global ANGLE_AIMED = 1; /* angle becomes current angle to the player + r, speed same as above */
 global ANGLE_SAVED = 2; /* angle becomes angle saved with EX_SAVEANGLE + r, speed same as above */
