@@ -6,6 +6,7 @@
     - [Bullet types](#s=MERLIN/doc/globals/etama)
     - [Misc. bullet-related](#s=MERLIN/doc/globals/etama-etc)
     - [Enemy types](#s=MERLIN/doc/globals/enemy)
+    - [Misc. enemy-related](#s=MERLIN/doc/globals/enemy-etc)
     - [Sound effects](#s=MERLIN/doc/globals/sfx)
     - [Other constants](#s=MERLIN/doc/globals/math)  
 3. Functions
