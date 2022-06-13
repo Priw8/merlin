@@ -7,7 +7,7 @@
 **N**o clue what the last 2 letters could stand for lmao  
 
 ### What is this?  
-It's an ECL library that aims to make writing custom ECL code easier and more friendly. It needs a `thecl` version from commit `c63c782c0d4ac80b6562c6b679d81ca8e17ddede` or later. Feel free to join the [ZUNcode discord](https://discord.gg/fvPJvHJ) if need help or want to ask any questions.
+It's an ECL library that aims to make writing custom ECL code easier and more friendly. It needs a `thecl` version from commit `c63c782c0d4ac80b6562c6b679d81ca8e17ddede` or later. Feel free to join the [ZUNcode discord](https://discord.gg/fvPJvHJ) if you need help or want to ask any questions.
 
 ### Usage
 There are 2 ways to use MERLIN:
